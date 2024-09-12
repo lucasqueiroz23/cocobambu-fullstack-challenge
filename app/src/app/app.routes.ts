@@ -5,4 +5,5 @@ import { FavoritesPageComponent } from './favorites/favorites-page/favorites-pag
 export const routes: Routes = [
     {path: 'search', component: SearchPageComponent},
     {path: 'favorites', component: FavoritesPageComponent},
+    {path: '', redirectTo: 'search', pathMatch: 'full'},
 ];
