@@ -1,9 +1,10 @@
-<main class="main">
-  <nav>
-    <ul>
-      <li><a routerLink="search" routerLinkActive="active" ariaCurrentWhenActive="page">search</a></li>
-      <li><a routerLink="favorites" routerLinkActive="active" ariaCurrentWhenActive="page">favorites</a></li>
-    </ul>
-  </nav>
-</main>
+<nav class="navbar flexcontainer">
+  <div class="logo">
+    <p>BookSearch</p>
+  </div>
+  <ul class="list flexcontainer">
+    <li><a routerLink="search" routerLinkActive="active" ariaCurrentWhenActive="page">Pesquisar livros</a></li>
+    <li><a routerLink="favorites" routerLinkActive="active" ariaCurrentWhenActive="page">Favoritos</a></li>
+  </ul>
+</nav>
 <router-outlet></router-outlet>

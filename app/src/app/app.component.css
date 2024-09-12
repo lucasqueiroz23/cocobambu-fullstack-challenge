@@ -1,0 +1,23 @@
+nav {
+    background-color: red;
+}
+
+li {
+    list-style-type: none;
+}
+
+.flexcontainer {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+}
+
+.flexcontainer>li {
+    background-color: red;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
