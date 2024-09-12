@@ -9,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class SearchPageComponent {
 
+  label: string = 'click me, please.';
+  count: number = 0;
+  constructor() {}
+
+  ngOnInit() {
+    console.log('ini')
+  }
+
+  buttonClicked() {
+    this.count++;
+    console.log(`you clicked me ${this.count} times`);
+  }
 }
