@@ -1,3 +1,9 @@
 <main class="main">
-  <app-home></app-home>
+  <nav>
+    <ul>
+      <li><a routerLink="search" routerLinkActive="active" ariaCurrentWhenActive="page">search</a></li>
+      <li><a routerLink="favorites" routerLinkActive="active" ariaCurrentWhenActive="page">favorites</a></li>
+    </ul>
+  </nav>
 </main>
+<router-outlet></router-outlet>

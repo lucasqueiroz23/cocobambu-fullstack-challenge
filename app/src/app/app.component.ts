@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'test';
-  creator = 'lucas';
+  title = '';
 }
