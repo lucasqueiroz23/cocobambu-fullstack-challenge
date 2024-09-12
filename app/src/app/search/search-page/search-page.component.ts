@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { BookSearchService } from '../../services/book-search.service';
 
 @Component({
   selector: 'app-search-page',
@@ -8,17 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './search-page.component.css'
 })
 export class SearchPageComponent {
+  private bookSearchService = inject(BookSearchService);
 
   label: string = 'click me, please.';
-  count: number = 0;
   constructor() {}
 
-  ngOnInit() {
-    console.log('ini')
-  }
-
   buttonClicked() {
-    this.count++;
-    console.log(`you clicked me ${this.count} times`);
+    this.bookSearchService.searchByTitle('harry potter');
   }
 }
