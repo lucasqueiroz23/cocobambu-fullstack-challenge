@@ -10,9 +10,11 @@ export class BookSearchService {
 
   constructor(private http: HttpClient) { }
 
-  searchByAuthor(): void {}
-  searchByTitle(title: string): void { 
-    this.http.get(this.apiUrl + `volumes?q=${title}`).subscribe((x)=> {
+  search(query: string): void { 
+    if(!query || query === '') 
+      throw new Error('Nenhum título foi providenciado na busca.');
+
+    this.http.get(this.apiUrl + `volumes?q=${query}`).subscribe((x)=> {
       console.log(x);
     })
   }

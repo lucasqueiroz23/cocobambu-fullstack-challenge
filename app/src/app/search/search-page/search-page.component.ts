@@ -15,6 +15,10 @@ export class SearchPageComponent {
   constructor() {}
 
   buttonClicked() {
-    this.bookSearchService.searchByTitle('harry potter');
+    try {
+      this.bookSearchService.search('');
+    } catch(error) {
+      console.log(error);
+    }
   }
 }
