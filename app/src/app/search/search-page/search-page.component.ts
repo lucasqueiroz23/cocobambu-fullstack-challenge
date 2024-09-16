@@ -21,10 +21,15 @@ export class SearchPageComponent {
   constructor() { }
 
   search() {
-    this.bookSearchService.search(this.userInput.value ?? '').subscribe({
+    if (!this.userInput.value) {
+      alert('O campo de busca não pode ficar em branco!');
+      this.searchResult = {}
+      return
+    }
+
+    this.bookSearchService.search(this.userInput.value).subscribe({
       next: res => {
         this.searchResult = res;
-        console.log(this.searchResult)
       },
       error: e => console.log(e),
     })
