@@ -12,7 +12,7 @@ export class BookSearchService {
 
   search(query: string): void { 
     if(!query || query === '') 
-      throw new Error('Nenhum título foi providenciado na busca.');
+      throw new Error('Nenhum título ou autor foi providenciado na busca.');
 
     this.http.get(this.apiUrl + `volumes?q=${query}`).subscribe((x)=> {
       console.log(x);

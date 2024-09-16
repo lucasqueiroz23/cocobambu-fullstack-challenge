@@ -1,3 +1,5 @@
 <main>
-    <button type="submit" (click)="buttonClicked()" >{{label}}</button>
+    <label for="userinput">Insira sua pesquisa</label>
+    <input type="text" id="userinput" name="userinput" [(ngModel)]="userInput">
+    <button type="submit" (click)="search()" >{{label}}</button>
 </main>
