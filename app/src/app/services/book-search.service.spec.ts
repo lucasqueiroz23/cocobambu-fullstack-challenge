@@ -23,6 +23,8 @@ describe('BookSearchService', () => {
   });
 
   it('should throw an error if the search query is empty', ()=> {
-    expect(() => service.search('')).toThrow(new Error('Nenhum título foi providenciado na busca.'));
+    expect(() => service.search('')).toThrow(new Error('Nenhum título ou autor foi providenciado na busca.'));
   });
+
+  
 });

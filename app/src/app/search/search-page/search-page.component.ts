@@ -14,6 +14,12 @@ import { BookInfo } from '../../books/book-info';
 export class SearchPageComponent {
   private bookSearchService = inject(BookSearchService);
   userInput = new FormControl('');
+  maxResults = new FormControl(5);
+  paginationOptions = {
+    maxResults: [
+      5, 10, 15, 20, 25, 30, 35, 40
+    ],
+  }
 
   searchResult: Partial<BookInfo> = {}
   readonly label: string = 'pesquisar';
@@ -27,7 +33,7 @@ export class SearchPageComponent {
       return
     }
 
-    this.bookSearchService.search(this.userInput.value).subscribe({
+    this.bookSearchService.search(this.userInput.value, this.maxResults.value, 0).subscribe({
       next: res => {
         this.searchResult = res;
       },

@@ -3,6 +3,13 @@
     <input (keyup.enter)="search()" type="text" id="userinput" name="userinput" [formControl]="userInput">
     <button type="submit" (click)="search()">{{label}}</button>
 
+    <label for="maxresults">Resultados por página</label>
+    <select [formControl]="maxResults" name="maxresults" id="maxresults">
+        @for (option of paginationOptions.maxResults; track option) {
+            <option [value]="option">{{option}}</option>
+        }
+    </select>
+
     @if(searchResult.items) {
         <p>Existem {{searchResult.totalItems}} resultados para sua busca.</p>
         @for (item of searchResult.items; track item.id) {
