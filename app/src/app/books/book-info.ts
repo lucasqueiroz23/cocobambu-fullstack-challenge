@@ -56,7 +56,6 @@ export interface ImageLinks {
     extraLarge: string
 }
 
-
 export interface SaleInfo {
     country: string
     saleability: string
@@ -65,5 +64,14 @@ export interface SaleInfo {
     buyLink: string
 }
 
+export interface Book {
+    id: string;
+    info: VolumeInfo;
+    review: Review;
+    note: string;
+}
 
-
+export interface Review {
+    tags: string[];
+    rating: number;
+}
