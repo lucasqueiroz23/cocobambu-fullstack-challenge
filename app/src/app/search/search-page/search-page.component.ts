@@ -3,11 +3,12 @@ import { BookSearchService } from '../../services/book-search.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { BookInfo } from '../../books/book-info';
+import { BookViewComponent } from '../../books/book-view/book-view.component';
 
 @Component({
   selector: 'app-search-page',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, JsonPipe],
+  imports: [FormsModule, ReactiveFormsModule, JsonPipe, BookViewComponent],
   templateUrl: './search-page.component.html',
   styleUrl: './search-page.component.css'
 })

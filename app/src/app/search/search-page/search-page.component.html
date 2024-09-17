@@ -11,36 +11,8 @@
     </select>
 
     @if(searchResult.items) {
-        <p>Existem {{searchResult.totalItems}} resultados para sua busca.</p>
         @for (item of searchResult.items; track item.id) {
-            <h2>{{item.volumeInfo.title}}</h2>
-
-            <h3>Autores:</h3>
-            <p>{{item.volumeInfo.authors}}</p>
-
-            <h3>Categorias:</h3>
-            <p>{{item.volumeInfo.categories}}</p>
-
-            <h3>Descrição:</h3>
-            <p>{{item.volumeInfo.description}}</p>
-
-            @if (item.volumeInfo.imageLinks) {
-                <h3>Capa:</h3>
-                <p>
-                        <img [src]='item.volumeInfo.imageLinks.thumbnail' [alt]="'Capa do livro ' + item.volumeInfo.title" />
-                </p>
-            } @else {
-                <p>Capa indisponível.</p>
-            }
-
-            @if(item.saleInfo && item.saleInfo.buyLink) {
-                <h3>Link para compra:</h3>
-                <p>
-                        <a [href]='item.saleInfo.buyLink'>{{item.saleInfo.buyLink}}</a>
-                </p>
-            } @else {
-                <h3>Link para compra indisponível.</h3>
-            }
+            <app-book-view [data]="item"></app-book-view>
         }
     }
 </main>
