@@ -12,12 +12,12 @@ export class BookSearchService {
 
   constructor(private http: HttpClient) { }
 
-  search(query: string, maxResults?: number | null, startIndex?: number | null): Observable<Partial<BookInfo>> {
+  search(query: string, maxResults?: number | null, startIndex?: number | null): Observable<BookInfo> {
     if (!query || query === '')
       throw new Error('Nenhum título ou autor foi providenciado na busca.');
 
     return this.http
-      .get(this.createRequestUrl(query, maxResults, startIndex))
+      .get<BookInfo>(this.createRequestUrl(query, maxResults, startIndex))
       .pipe(map(res => res))
   }
 

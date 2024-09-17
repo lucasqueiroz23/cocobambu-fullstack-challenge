@@ -22,7 +22,15 @@ export class SearchPageComponent {
     ],
   }
 
-  searchResult: Partial<BookInfo> = {}
+  emptyResult = {
+    kind: '',
+    items: [],
+    totalItems: 0,
+  }
+
+  searchResult: BookInfo = this.emptyResult;
+
+  
   readonly label: string = 'pesquisar';
 
   constructor() { }
@@ -30,7 +38,7 @@ export class SearchPageComponent {
   search() {
     if (!this.userInput.value) {
       alert('O campo de busca não pode ficar em branco!');
-      this.searchResult = {}
+      this.searchResult = this.emptyResult;
       return
     }
 

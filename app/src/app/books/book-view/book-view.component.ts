@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Volume } from '../book-info';
+import { Book, Volume } from '../book-info';
+import { BookBuilder } from '../book-builder';
 
 @Component({
   selector: 'app-book-view',
@@ -9,5 +10,22 @@ import { Volume } from '../book-info';
   styleUrl: './book-view.component.css'
 })
 export class BookViewComponent {
-  @Input({required: true}) data: Partial<Volume> = {};
+  emptyVolume: Volume = {
+    kind: '',
+    etag: '',
+    id: '',
+    selfLink: '',
+  }
+
+  @Input({required: true}) data: Volume = this.emptyVolume;
+
+  book: Book
+
+  constructor(){
+    this.book = new BookBuilder(this.data);
+  }
+
+  addToFavorites() {
+
+  }
 }

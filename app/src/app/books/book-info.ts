@@ -9,8 +9,8 @@ export interface Volume {
     id: string
     etag: string
     selfLink: string
-    volumeInfo: VolumeInfo
-    saleInfo: SaleInfo
+    volumeInfo?: VolumeInfo
+    saleInfo?: SaleInfo
 }
 
 export interface VolumeInfo {
@@ -66,12 +66,12 @@ export interface SaleInfo {
 
 export interface Book {
     id: string;
-    info: VolumeInfo;
+    info: Volume;
     review: Review;
-    note: string;
 }
 
 export interface Review {
     tags: string[];
+    note: string;
     rating: number;
 }
