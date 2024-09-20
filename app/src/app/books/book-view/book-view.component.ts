@@ -25,7 +25,7 @@ export class BookViewComponent {
     this.book = new BookBuilder(this.data);
   }
 
-  addToFavorites() {
+  toggleFavorite() {
 
   }
 }

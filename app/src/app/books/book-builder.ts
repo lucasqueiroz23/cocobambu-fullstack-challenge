@@ -12,7 +12,7 @@ export class BookBuilder implements Book {
     }
 
     getReview(): Review {
-        const emptyReview = { tags: [], note: '', rating: 0 };
+        const emptyReview = { tags: [], note: '', rating: 0, favorite: false};
 
         const review = localStorage.getItem(this.id);
         if (!review) return emptyReview;
@@ -22,7 +22,8 @@ export class BookBuilder implements Book {
             return {
                 tags: storedReview['tags'],
                 note: storedReview['note'],
-                rating: storedReview['rating']
+                rating: storedReview['rating'],
+                favorite: storedReview['favorite'],
             }
         } catch(e) {
             return emptyReview;
