@@ -11,4 +11,7 @@ OBS: Caso queira executar os testes unitários, use `bash test.sh` ou, no diret�
 
 Para contribuir com o projeto, primeiro verifique se existe alguma issue aberta com o problema que você quer resolver. Caso contrário, crie. Depois, faça um fork e adicione suas contribuições. Por fim, abra um Pull Request. 
 
+## Sugestões de melhorias
 
+- Utilizar containerização (docker);
+- Escrever uma API para conversar com a API do google e possivelmente guardar os dados (livros favoritados, etc) num banco de dados.
